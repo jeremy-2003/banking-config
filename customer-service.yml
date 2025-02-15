@@ -5,4 +5,4 @@ spring:
     name: customer-service
   data:
     mongodb:
-      uri: mongodb://localhost::27017/bankdb
+      uri: mongodb://localhost:27017/bankdb
