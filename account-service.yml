@@ -21,13 +21,16 @@ customer-service:
   base-url: http://localhost:8081/api/customers
 springdoc:
   api-docs:
-    enable: true
-    path: /v3/api-docs  # Corregido de 'paht' a 'path'
+    enabled: true
+    path: /v3/api-docs
   swagger-ui:
-    path: /swagger-ui.html
+    path: /springdoc-ui.html  # Cambiado a springdoc-ui.html para evitar conflictos
     operationsSorter: method
     tagsSorter: alpha
     docExpansion: none
+springfox:
+  documentation:
+    enabled: true
 management:
   endpoints:
     web:
