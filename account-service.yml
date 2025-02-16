@@ -1,38 +1,39 @@
 server:
-  port: 8082
+ port: 8082
 spring:
-  application:
-    name: account-service
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/bankdb
-    redis:
-      host: localhost
-      port: 6379
-  kafka:
-    bootstrap-servers: localhost:9092
-    consumer:
-      group-id: account-service-group
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: "*"
+ application:
+   name: account-service
+ data:
+   mongodb:
+     uri: mongodb://localhost:27017/bankdb
+   redis:
+     host: localhost
+     port: 6379
+ kafka:
+   bootstrap-servers: localhost:9092
+   consumer:
+     group-id: account-service-group
+     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+     value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+     properties:
+       spring.json.trusted.packages: "*"
+       spring.json.type.mapping: customer:com.bank.accountservice.model.Customer
 customer-service:
-  base-url: http://localhost:8081/api/customers
+ base-url: http://localhost:8081/api/customers
 springdoc:
-  api-docs:
-    enabled: true
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    operationsSorter: method
-    tagsSorter: alpha
-    docExpansion: none
+ api-docs:
+   enabled: true
+   path: /v3/api-docs
+ swagger-ui:
+   path: /swagger-ui.html
+   operationsSorter: method
+   tagsSorter: alpha
+   docExpansion: none
 management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, env
-  endpoint:
-    health:
-      show-details: always
+ endpoints:
+   web:
+     exposure:
+       include: health, info, metrics, env
+ endpoint:
+   health:
+     show-details: always
