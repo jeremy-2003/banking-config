@@ -22,15 +22,12 @@ customer-service:
 springdoc:
   api-docs:
     enabled: true
-    path: /v3/api-docs
+    path: /api-docs
   swagger-ui:
-    path: /springdoc-ui.html  # Cambiado a springdoc-ui.html para evitar conflictos
+    path: /swagger-ui.html
     operationsSorter: method
     tagsSorter: alpha
     docExpansion: none
-springfox:
-  documentation:
-    enabled: true
 management:
   endpoints:
     web:
