@@ -17,6 +17,7 @@ spring:
      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
      properties:
        spring.json.trusted.packages: "*"
+       spring.json.use.type.headers: false
 customer-service:
  base-url: http://localhost:8081/api/customers
 springdoc:
