@@ -19,3 +19,20 @@ spring:
         spring.json.trusted.packages: "*"
 customer-service:
   base-url: http://localhost:8081/api/customers
+springdoc:
+  api-docs:
+    enable: true
+    paht: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    docExpansion: none
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, env
+  endpoint:
+    health:
+      show-details: always
