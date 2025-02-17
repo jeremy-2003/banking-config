@@ -17,9 +17,8 @@ spring:
      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
      auto-offset-reset: latest
      properties:
-       spring.json.trusted.packages: "*"
-       spring.json.use.type.headers: false
-       spring.json.value.default.types: com.bank.accountservice.model.Customer
+      spring.json.type.mapping: customer:com.bank.accountservice.model.Customer
+      spring.json.trusted.packages: "*"
 customer-service:
  base-url: http://localhost:8081/api/customers
 springdoc:
