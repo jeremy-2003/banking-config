@@ -10,7 +10,7 @@ spring:
      host: localhost
      port: 6379
  kafka:
-   bootstrap-servers: 192.168.1.77:9092
+   bootstrap-servers: NTTD-3KDMY64:9092
    consumer:
      group-id: account-service-group
      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -19,6 +19,11 @@ spring:
      properties:
       spring.json.type.mapping: customer:com.bank.accountservice.model.Customer
       spring.json.trusted.packages: "*"
+      heartbeat.interval.ms: 3000
+      session.timeout.ms: 10000
+      max.poll.interval.ms: 300000
+      reconnect.backoff.ms: 1000
+      reconnect.backoff.max.ms: 10000
 customer-service:
  base-url: http://localhost:8081/api/customers
 springdoc:
