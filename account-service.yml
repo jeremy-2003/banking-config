@@ -10,7 +10,7 @@ spring:
      host: localhost
      port: 6379
  kafka:
-   bootstrap-servers: localhost:9092
+   bootstrap-servers: 192.168.1.77:9092
    consumer:
      group-id: account-service-group
      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
