@@ -24,6 +24,12 @@ spring:
       max.poll.interval.ms: 300000
       reconnect.backoff.ms: 1000
       reconnect.backoff.max.ms: 10000
+   producer:
+     key-serializer: org.apache.kafka.common.serialization.StringSerializer
+     value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+     properties:
+      spring.json.type.mapping: account:com.bank.accountservice.model.Account
+      spring.json.trusted.packages: "*"
 customer-service:
  base-url: http://localhost:8081/api/customers
 springdoc:
