@@ -9,6 +9,14 @@ spring:
    redis:
      host: localhost
      port: 6379
+ kafka:
+  bootstrap-servers: NTTD-3KDMY64:9092
+  producer:
+     key-serializer: org.apache.kafka.common.serialization.StringSerializer
+     value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+     properties:
+      spring.json.type.mapping: credit:com.bank.creditservice.model.Credit, creditcard:com.bank.creditservice.model.CreditCard, 
+      spring.json.trusted.packages: "*"
 customer-service:
  base-url: http://localhost:8081/api/customers
 springdoc:
