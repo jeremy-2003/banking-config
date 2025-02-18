@@ -14,7 +14,6 @@ spring:
   producer:
      key-serializer: org.apache.kafka.common.serialization.StringSerializer
      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-     transaction-id-prefix: "tx-"
      properties:
       spring.json.type.mapping: credit:com.bank.creditservice.model.Credit, creditcard:com.bank.creditservice.model.CreditCard
       spring.json.trusted.packages: "*"
