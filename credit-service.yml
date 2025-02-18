@@ -16,7 +16,7 @@ spring:
      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
      transaction-id-prefix: "tx-"
      properties:
-      spring.json.type.mapping: credit:com.bank.creditservice.model.Credit, creditcard:com.bank.creditservice.model.CreditCard, 
+      spring.json.type.mapping: credit:com.bank.creditservice.model.Credit, creditcard:com.bank.creditservice.model.CreditCard
       spring.json.trusted.packages: "*"
 customer-service:
  base-url: http://localhost:8081/api/customers
