@@ -1,0 +1,25 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: report-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/bankdb
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    docExpansion: none
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, env
+  endpoint:
+    health:
+      show-details: always
