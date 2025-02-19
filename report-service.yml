@@ -24,10 +24,7 @@ management:
     health:
       show-details: always
 services:
-  account:
-    url: http://localhost:8082
-  credit:
-    url: http://localhost:8083
-  transaction:
-    url: http://localhost:8084
+  account-url: http://localhost:8082
+  credit-url: http://localhost:8083
+  transaction-url: http://localhost:8084
     
