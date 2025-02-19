@@ -27,8 +27,7 @@ spring:
 account-service:
  base-url: http://localhost:8082/api/accounts
 credit-service:
- base-url-credit: http://localhost:8083/api/credits
- base-url-creditcard: http://localhost:8083/api/credit-cards
+ base-url-credit: http://localhost:8083/api
 springdoc:
  api-docs:
    enabled: true
