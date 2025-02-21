@@ -63,6 +63,6 @@ transaction-max:
  checking: 4
  fixed-terms: 3
 transaction-cost:
- savings: 5.40
- checking: 4.10
- fixed-terms: 8.00
+ savings: 5
+ checking: 4
+ fixed-terms: 8
