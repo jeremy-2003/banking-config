@@ -31,3 +31,4 @@ services:
   account-url: http://localhost:8082
   credit-url: http://localhost:8083
   transaction-url: http://localhost:8084
+  customer-url: http://localhost:8081/api/customers
