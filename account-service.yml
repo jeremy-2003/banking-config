@@ -58,7 +58,11 @@ management:
 default-values:
  maintenanFee: 100
  minBalanceRequirement: 60
-transaction:
+transaction-max:
  savings: 5
  checking: 4
  fixed-terms: 3
+transaction-cost:
+ savings: 5.40
+ checking: 4.10
+ fixed-terms: 8
