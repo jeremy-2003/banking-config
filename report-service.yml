@@ -32,3 +32,6 @@ services:
   credit-url: http://localhost:8083
   transaction-url: http://localhost:8084
   customer-url: http://localhost:8081/api/customers
+logging:
+  level:
+    org.springframework.data.mongodb.core: DEBUG
