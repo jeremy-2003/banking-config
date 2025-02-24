@@ -22,9 +22,9 @@ spring:
       spring.json.type.mapping: credit:com.bank.creditservice.model.credit.Credit, creditcard:com.bank.creditservice.model.creditcard.CreditCard
       spring.json.trusted.packages: "*"
 customer-service:
- base-url: http://localhost:8081/api/customers
+ base-url: http://localhost:8080/api/customers
 account-service:
- base-url: http://localhost:8082/api/accounts
+ base-url: http://localhost:8080/api/accounts
 springdoc:
  api-docs:
    enabled: true
