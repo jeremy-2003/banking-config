@@ -29,7 +29,7 @@ spring:
       reconnect.backoff.ms: 1000
       reconnect.backoff.max.ms: 10000
 account-service:
- base-url: http://localhost:8080/api/accounts
+ base-url: http://localhost:8080/api
 credit-service:
  base-url-credit: http://localhost:8080/api
 springdoc:
