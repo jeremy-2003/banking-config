@@ -28,9 +28,9 @@ management:
     health:
       show-details: always
 services:
-  account-url: http://localhost:8080
-  credit-url: http://localhost:8080
-  transaction-url: http://localhost:8080
+  account-url: http://localhost:8080/api
+  credit-url: http://localhost:8080/api
+  transaction-url: http://localhost:8080/api
   customer-url: http://localhost:8080/api/customers
 logging:
   level:
