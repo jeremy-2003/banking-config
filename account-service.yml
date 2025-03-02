@@ -76,7 +76,6 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 3
         slowCallDurationThreshold: 5s
         slowCallRateThreshold: 50
-        registerHealthIndicator: true
     instances:
       customerService:
         baseConfig: default
