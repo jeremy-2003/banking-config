@@ -68,11 +68,14 @@ transaction-cost:
  fixed-terms: 8.50
 resilience4j:
  circuitbreaker:
+   configs:
+     default:
+       slidingWindowSize: 10
+       failureRateThreshold: 50
+       waitDurationInOpenState: 10s
+       permittedNumberOfCallsInHalfOpenState: 3
+       slowCallDurationThreshold: 5s
+       slowCallRateThreshold: 50
    instances:
      customerService:
-       slidingWindowSize: 10
-       failureRateThreshold: 50  # Si el 50% de las llamadas fallan, se abre el circuito
-       waitDurationInOpenState: 10s  # Tiempo de espera antes de probar Half-Open
-       permittedNumberOfCallsInHalfOpenState: 3  # Llamadas permitidas en Half-Open para decidir el estado
-       slowCallDurationThreshold: 5s  # Si una llamada toma más de 5s, se considera fallida
-       slowCallRateThreshold: 50  # Si el 50% de las llamadas son lentas, se abre el circuito
+       baseConfig: default
