@@ -51,7 +51,7 @@ management:
  endpoints:
    web:
      exposure:
-       include: health, info, metrics, env
+       include: health, info, metrics, env, resilience4j.circuitbreaker, resilience4j.ratelimiter, resilience4j.retry, resilience4j.timelimiter
  endpoint:
    health:
      show-details: always
