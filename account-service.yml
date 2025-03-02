@@ -48,17 +48,13 @@ springdoc:
     tagsSorter: alpha
     docExpansion: none
 management:
- health:
-   circuitbreakers:
-     enabled: true
- endpoints:
-   web:
-     exposure:
-       include: health,info,metrics,circuitbreakers
- endpoint:
-   health:
-     show-details: always
-     show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, env
+  endpoint:
+    health:
+      show-details: always
 default-values:
   maintenanFee: 100
   minBalanceRequirement: 60
@@ -84,4 +80,3 @@ resilience4j:
     instances:
       customerService:
         baseConfig: default
-        registerHealthIndicator: true
