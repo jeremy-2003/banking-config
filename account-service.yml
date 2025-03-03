@@ -34,7 +34,7 @@ kafka:
      spring.json.type.mapping: account:com.bank.accountservice.model.account.Account
      spring.json.trusted.packages: "*"
 customer-service:
- base-url: http://localhost:8080/api/customers">http://localhost:8080/api/customers
+ base-url: http://localhost:8080/api/customers
 credit-service:
  base-url: http://localhost:8080/api
 springdoc:
