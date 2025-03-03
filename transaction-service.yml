@@ -49,3 +49,20 @@ management:
  endpoint:
    health:
      show-details: always
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slowCallDurationThreshold: 5s
+        slowCallRateThreshold: 50
+    instances:
+      accountService:
+        baseConfig: default
+      creditService:
+        baseConfig: default
+      debitCardService:
+        baseConfig: default
