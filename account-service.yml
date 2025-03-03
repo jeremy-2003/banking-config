@@ -15,19 +15,26 @@ spring:
       port: 6379
   kafka:
    bootstrap-servers: bank-kafka.servicebus.windows.net:9093
+   properties:
+     sasl.mechanism: PLAIN
+     sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs=";
+     security.protocol: SASL_SSL
+     request.timeout.ms: 60000
+     retry.backoff.ms: 1000
    consumer:
-     auto-offset-reset: earliest
      group-id: account-service-group
      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+     auto-offset-reset: latest
      properties:
-       spring.json.trusted.packages: "*"
        spring.json.type.mapping: customer:com.bank.accountservice.model.customer.Customer
+       spring.json.trusted.packages: "*"
    producer:
      key-serializer: org.apache.kafka.common.serialization.StringSerializer
      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
      properties:
        spring.json.type.mapping: account:com.bank.accountservice.model.account.Account
+       spring.json.trusted.packages: "*"
 customer-service:
   base-url: http://localhost:8080/api/customers
 credit-service:
