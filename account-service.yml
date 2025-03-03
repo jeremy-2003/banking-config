@@ -19,19 +19,19 @@ spring:
     security.protocol: SASL_SSL
     sasl.mechanism: PLAIN
     sasl.jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username='$ConnectionString' password='Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs=';"
-  consumer:
+   consumer:
      group-id: account-service-group
      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
      auto-offset-reset: latest
      properties:
-        spring.json.type.mapping: customer:com.bank.accountservice.model.customer.Customer
-        spring.json.trusted.packages: "*"
-        heartbeat.interval.ms: 3000
-        session.timeout.ms: 10000
-        max.poll.interval.ms: 300000
-        reconnect.backoff.ms: 1000
-        reconnect.backoff.max.ms: 10000
+       spring.json.type.mapping: customer:com.bank.accountservice.model.customer.Customer
+       spring.json.trusted.packages: "*"
+       heartbeat.interval.ms: 3000
+       session.timeout.ms: 10000
+       max.poll.interval.ms: 300000
+       reconnect.backoff.ms: 1000
+       reconnect.backoff.max.ms: 10000
    producer:
      key-serializer: org.apache.kafka.common.serialization.StringSerializer
      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
