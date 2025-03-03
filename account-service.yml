@@ -11,8 +11,11 @@ spring:
     mongodb:
       uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/bank-db?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
     redis:
-      host: localhost
+      host: redis-bootcamp.redis.cache.windows.net
       port: 6379
+      password: ySxGplL2IJg6maslG3CUqZFemQjgkJOxkAzCaMBUle0=
+      ssl: true
+      timeout: 10000
   kafka:
       bootstrap-servers: NTTD-3KDMY64:9092
   consumer:
