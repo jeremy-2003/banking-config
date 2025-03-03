@@ -79,3 +79,7 @@ resilience4j:
     instances:
       customerService:
         baseConfig: default
+      creditService:
+        baseConfig: default
+      customerEligibilityService:
+        baseConfig: default
