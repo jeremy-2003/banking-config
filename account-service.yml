@@ -18,7 +18,7 @@ spring:
    properties:
      security.protocol: SASL_SSL
      sasl.mechanism: PLAIN
-     sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs=";
+     sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="bank-kafka.servicebus.windows.net" password="Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs=";
      ssl.protocol: TLSv1.2
   consumer:
       group-id: account-service-group
