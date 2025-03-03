@@ -18,7 +18,7 @@ spring:
     properties:
      security.protocol: SASL_SSL
      sasl.mechanism: PLAIN
-     sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password='Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs=';
+     sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password='Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs='
     consumer:
       group-id: account-service-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -34,7 +34,7 @@ spring:
         reconnect.backoff.max.ms: 10000
         security.protocol: SASL_SSL
         sasl.mechanism: PLAIN
-        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password='Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs=';
+        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password='Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs='
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
@@ -43,7 +43,7 @@ spring:
         spring.json.trusted.packages: "*"
         security.protocol: SASL_SSL
         sasl.mechanism: PLAIN
-        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password='Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs=';
+        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password='Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs='
 customer-service:
   base-url: http://localhost:8080/api/customers
 credit-service:
