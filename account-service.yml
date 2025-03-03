@@ -14,7 +14,7 @@ spring:
      host: localhost
      port: 6379
  kafka:
-   bootstrap-servers: bank-kafka.servicebus.windows.net:9093
+   bootstrap-servers: bank-kafka.servicebus.windows.net:443
    consumer:
      group-id: account-service-group
      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
