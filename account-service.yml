@@ -9,17 +9,13 @@ spring:
     name: account-service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/bankdb
+      uri: mongodb+srv://jeremy:Hola#123@bank-db.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
     redis:
       host: localhost
       port: 6379
   kafka:
-   bootstrap-servers: bank-kafka.servicebus.windows.net:9093
+   bootstrap-servers: NTTD-3KDMY64:9092
    properties:
-     security.protocol: SASL_SSL
-     sasl.mechanism: PLAIN
-     sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ykreloec/j0Ge7LMOBAR09S4XgfK3dFYl+AEhExdnQs=";
-     ssl.protocol: TLSv1.2
    consumer:
      group-id: account-service-group
      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
