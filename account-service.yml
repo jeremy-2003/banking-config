@@ -79,7 +79,10 @@ resilience4j:
     instances:
       customerService:
         baseConfig: default
+        timeoutDuration: 2s
       creditService:
         baseConfig: default
+        timeoutDuration: 2s
       customerEligibilityService:
         baseConfig: default
+        timeoutDuration: 2s
