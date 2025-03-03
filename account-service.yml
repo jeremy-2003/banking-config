@@ -9,7 +9,7 @@ spring:
     name: account-service
   data:
     mongodb:
-      uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
+      uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/bank-db?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
     redis:
       host: localhost
       port: 6379
