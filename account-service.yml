@@ -25,7 +25,6 @@ spring:
      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
      auto-offset-reset: latest
      properties:
-       spring.json.type.mapping: customer:com.bank.accountservice.model.customer.Customer
        spring.json.trusted.packages: "*"
        heartbeat.interval.ms: 3000
        session.timeout.ms: 10000
@@ -36,7 +35,6 @@ spring:
      key-serializer: org.apache.kafka.common.serialization.StringSerializer
      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
      properties:
-       spring.json.type.mapping: account:com.bank.accountservice.model.account.Account
        spring.json.trusted.packages: "*"
 customer-service:
   base-url: http://localhost:8080/api/customers
