@@ -48,9 +48,13 @@ resilience4j:
     instances:
       customerService:
         baseConfig: default
+        timeoutDuration: 2s
       accountService:
         baseConfig: default
+        timeoutDuration: 2s
       creditService:
         baseConfig: default
+        timeoutDuration: 2s
       debitCardService:
         baseConfig: default
+        timeoutDuration: 2s
