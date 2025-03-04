@@ -1,5 +1,5 @@
 server:
-    port: 8084
+    port: 80
 eureka:
     client:
         service-url:
@@ -38,9 +38,9 @@ spring:
                 reconnect.backoff.ms: 1000
                 reconnect.backoff.max.ms: 10000
 account-service:
-    base-url: http://localhost:8080/api
+    base-url: https://apigateway-awfrh3a7gweucpbb.canadacentral-01.azurewebsites.net/api
 credit-service:
-    base-url-credit: http://localhost:8080/api
+    base-url-credit: https://apigateway-awfrh3a7gweucpbb.canadacentral-01.azurewebsites.net/api
 springdoc:
     api-docs:
         enabled: true
