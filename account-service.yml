@@ -17,7 +17,7 @@ spring:
             ssl: true
             timeout: 10000
     kafka:
-        bootstrap-servers: bank-kafka.servicebus.windows.net:9093
+        bootstrap-servers: https://bank-kafka.servicebus.windows.net:9093
         properties:
             security:
                 protocol: SASL_SSL
