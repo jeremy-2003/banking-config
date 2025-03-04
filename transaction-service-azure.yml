@@ -1,0 +1,91 @@
+server:
+    port: 80
+eureka:
+    client:
+        service-url:
+            defaultZone: http://eureka-server-cxgjf0gxbhbsfccz.canadacentral-01.azurewebsites.net/eureka
+    instance:
+        hostname: transactionservice-g3gmebgcbucugxhr.canadacentral-01.azurewebsites.net
+        nonSecurePort: 80
+        securePort: 443
+        securePortEnabled: true
+        nonSecurePortEnabled: false
+        preferIpAddress: false
+        instanceId: ${spring.application.name}:${random.uuid}
+        statusPageUrl: https://${eureka.instance.hostname}/actuator/info
+        healthCheckUrl: https://${eureka.instance.hostname}/actuator/health
+        homePageUrl: https://${eureka.instance.hostname}/        
+spring:
+    application:
+        name: transaction-service
+    data:
+        mongodb:
+            uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/bank-db?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
+        redis:
+            host: redis-bootcamp.redis.cache.windows.net
+            port: 6380
+            password: ySxGplL2IJg6maslG3CUqZFemQjgkJOxkAzCaMBUle0=
+            ssl: true
+            timeout: 10000
+    kafka:
+        bootstrap-servers: bankkafka.servicebus.windows.net:9093
+        properties:
+            security:
+                protocol: SASL_SSL
+            sasl:
+                mechanism: PLAIN
+            sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="\$\ConnectionString" password="Endpoint=sb://bankkafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=tVQTP6WHDJNy08SKfHu1t9qrz486rolhD+AEhJM5Ohk=";
+        consumer:
+            group-id: transaction-service-group
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+            auto-offset-reset: latest
+            properties:
+                spring.json.type.mapping: account:com.bank.transactionservice.model.account.Account,credit:com.bank.transactionservice.model.credit.Credit,creditcard:com.bank.transactionservice.model.creditcard.CreditCard 
+                spring.json.trusted.packages: "*"
+                heartbeat.interval.ms: 3000
+                session.timeout.ms: 10000
+                max.poll.interval.ms: 300000
+                reconnect.backoff.ms: 1000
+                reconnect.backoff.max.ms: 10000
+account-service:
+    base-url: https://apigateway-awfrh3a7gweucpbb.canadacentral-01.azurewebsites.net/api
+credit-service:
+    base-url-credit: https://apigateway-awfrh3a7gweucpbb.canadacentral-01.azurewebsites.net/api
+springdoc:
+    api-docs:
+        enabled: true
+        path: /v3/api-docs
+    swagger-ui:
+        path: /swagger-ui.html
+        operationsSorter: method
+        tagsSorter: alpha
+        docExpansion: none
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health, info, metrics, env
+    endpoint:
+        health:
+            show-details: always
+resilience4j:
+    circuitbreaker:
+        configs:
+            default:
+                slidingWindowSize: 10
+                failureRateThreshold: 50
+                waitDurationInOpenState: 10s
+                permittedNumberOfCallsInHalfOpenState: 3
+                slowCallDurationThreshold: 5s
+                slowCallRateThreshold: 50
+        instances:
+            accountService:
+                baseConfig: default
+                timeoutDuration: 2s
+            creditService:
+                baseConfig: default
+                timeoutDuration: 2s
+            debitCardService:
+                baseConfig: default
+                timeoutDuration: 2s
