@@ -17,13 +17,13 @@ spring:
             ssl: true
             timeout: 10000
     kafka:
-        bootstrap-servers: https://bank-kafka.servicebus.windows.net:9093
+        bootstrap-servers: bankkafka.servicebus.windows.net:9093
         properties:
             security:
                 protocol: SASL_SSL
             sasl:
                 mechanism: PLAIN
-            sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="\$\ConnectionString" password="Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=DzIJYPVXDrLzgbzbaOke/g8NRXENY0HUM+AEhMdANzQ=";
+            sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="\$\ConnectionString" password="Endpoint=sb://bankkafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=tVQTP6WHDJNy08SKfHu1t9qrz486rolhD+AEhJM5Ohk=";
         consumer:
             group-id: account-service-group
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
