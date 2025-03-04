@@ -1,60 +1,60 @@
 server:
-  port: 8085
+    port: 8085
 eureka:
- client:
-  service-url:
-   defaultZone: http://localhost:8761/eureka
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka
 spring:
-  application:
-    name: report-service
-  data:
-    mongodb:
-      uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/bank-db?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
+    application:
+        name: report-service
+    data:
+        mongodb:
+        uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/bank-db?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
 springdoc:
-  api-docs:
-    enabled: true
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    operationsSorter: method
-    tagsSorter: alpha
-    docExpansion: none
+    api-docs:
+        enabled: true
+        path: /v3/api-docs
+    swagger-ui:
+        path: /swagger-ui.html
+        operationsSorter: method
+        tagsSorter: alpha
+        docExpansion: none
 management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, env
-  endpoint:
-    health:
-      show-details: always
+    endpoints:
+        web:
+            exposure:
+                include: health, info, metrics, env
+    endpoint:
+        health:
+            show-details: always
 services:
-  account-url: http://localhost:8080/api
-  credit-url: http://localhost:8080/api
-  transaction-url: http://localhost:8080/api
-  customer-url: http://localhost:8080/api/customers
+    account-url: http://localhost:8080/api
+    credit-url: http://localhost:8080/api
+    transaction-url: http://localhost:8080/api
+    customer-url: http://localhost:8080/api/customers
 logging:
-  level:
-    org.springframework.data.mongodb.core: DEBUG
+    level:
+        org.springframework.data.mongodb.core: DEBUG
 resilience4j:
-  circuitbreaker:
-    configs:
-      default:
-        slidingWindowSize: 10
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
-        permittedNumberOfCallsInHalfOpenState: 3
-        slowCallDurationThreshold: 5s
-        slowCallRateThreshold: 50
-    instances:
-      customerService:
-        baseConfig: default
-        timeoutDuration: 2s
-      accountService:
-        baseConfig: default
-        timeoutDuration: 2s
-      creditService:
-        baseConfig: default
-        timeoutDuration: 2s
-      debitCardService:
-        baseConfig: default
-        timeoutDuration: 2s
+    circuitbreaker:
+        configs:
+            default:
+                slidingWindowSize: 10
+                failureRateThreshold: 50
+                waitDurationInOpenState: 10s
+                permittedNumberOfCallsInHalfOpenState: 3
+                slowCallDurationThreshold: 5s
+                slowCallRateThreshold: 50
+            instances:
+                customerService:
+                    baseConfig: default
+                    timeoutDuration: 2s
+                accountService:
+                    baseConfig: default
+                    timeoutDuration: 2s
+                creditService:
+                    baseConfig: default
+                    timeoutDuration: 2s
+                debitCardService:
+                    baseConfig: default
+                    timeoutDuration: 2s
