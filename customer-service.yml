@@ -11,13 +11,13 @@ spring:
         mongodb:
             uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/bank-db?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
     kafka:
-        bootstrap-servers: bank-kafka.servicebus.windows.net:9093
+        bootstrap-servers: bankkafka.servicebus.windows.net:9093
         properties:
             security:
                 protocol: SASL_SSL
             sasl:
                 mechanism: PLAIN
-            sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="\$\ConnectionString" password="Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=DzIJYPVXDrLzgbzbaOke/g8NRXENY0HUM+AEhMdANzQ=";
+            sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="\$\ConnectionString" password="Endpoint=sb://bankkafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=tVQTP6WHDJNy08SKfHu1t9qrz486rolhD+AEhJM5Ohk=";
         producer:
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
