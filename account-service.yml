@@ -1,5 +1,5 @@
 server:
-    port: 8082
+    port: 80
 eureka:
     client:
         service-url:
@@ -44,9 +44,9 @@ spring:
                 spring.json.type.mapping: account:com.bank.accountservice.model.account.Account
                 spring.json.trusted.packages: "*"
 customer-service:
-    base-url: http://localhost:8080/api/customers
+    base-url: https://apigateway-awfrh3a7gweucpbb.canadacentral-01.azurewebsites.net/api/customers
 credit-service:
-    base-url: http://localhost:8080/api
+    base-url: https://apigateway-awfrh3a7gweucpbb.canadacentral-01.azurewebsites.net/api
 springdoc:
     api-docs:
         enabled: true
