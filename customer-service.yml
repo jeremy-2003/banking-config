@@ -4,6 +4,17 @@ eureka:
     client:
         service-url:
             defaultZone: http://eureka-server-cxgjf0gxbhbsfccz.canadacentral-01.azurewebsites.net/eureka
+    instance:
+        hostname: customerservice-bvg0azhpcfhpbmg8.canadacentral-01.azurewebsites.net
+        nonSecurePort: 80
+        securePort: 443
+        securePortEnabled: true
+        nonSecurePortEnabled: false
+        preferIpAddress: false
+        instanceId: ${spring.application.name}:${random.uuid}
+        statusPageUrl: https://${eureka.instance.hostname}/actuator/info
+        healthCheckUrl: https://${eureka.instance.hostname}/actuator/health
+        homePageUrl: https://${eureka.instance.hostname}/
 spring:
     application:
         name: customer-service
