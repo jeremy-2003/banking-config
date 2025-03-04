@@ -1,38 +1,43 @@
 server:
-  port: 8081
+    port: 8081
 eureka:
- client:
-  service-url:
-   defaultZone: http://localhost:8761/eureka
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka
 spring:
-  application:
-    name: customer-service
-  data:
-    mongodb:
-      uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/bank-db?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
-  kafka:
-    bootstrap-servers: NTTD-3KDMY64:9092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      properties:
-        spring.json.type.mapping: customer:com.bank.customerservice.model.customer.Customer
-        spring.json.trusted.packages: "*"
+    application:
+        name: customer-service
+    data:
+        mongodb:
+            uri: mongodb+srv://jeremy:Hola1234@bank-db.mongocluster.cosmos.azure.com/bank-db?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000
+    kafka:
+        bootstrap-servers: bank-kafka.servicebus.windows.net:9093
+        properties:
+            security:
+                protocol: SASL_SSL
+            sasl:
+                mechanism: PLAIN
+            sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="\$\ConnectionString" password="Endpoint=sb://bank-kafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=DzIJYPVXDrLzgbzbaOke/g8NRXENY0HUM+AEhMdANzQ=";
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+            properties:
+                spring.json.type.mapping: customer:com.bank.customerservice.model.customer.Customer
+                spring.json.trusted.packages: "*"
 springdoc:
-  api-docs:
-    enabled: true
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    operationsSorter: method
-    tagsSorter: alpha
-    docExpansion: none
-
+    api-docs:
+        enabled: true
+        path: /v3/api-docs
+    swagger-ui:
+        path: /swagger-ui.html
+        operationsSorter: method
+        tagsSorter: alpha
+        docExpansion: none
 management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, env
-  endpoint:
-    health:
-      show-details: always
+    endpoints:
+        web:
+            exposure:
+                include: health, info, metrics, env
+    endpoint:
+        health:
+            show-details: always
