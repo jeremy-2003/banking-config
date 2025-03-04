@@ -3,7 +3,7 @@ server:
 eureka:
     client:
         service-url:
-            defaultZone: https://eureka-server-cxgjf0gxbhbsfccz.canadacentral-01.azurewebsites.net/eureka
+            defaultZone: http://eureka-server-cxgjf0gxbhbsfccz.canadacentral-01.azurewebsites.net/eureka
 spring:
     application:
         name: credit-service
