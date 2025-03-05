@@ -41,6 +41,8 @@ account-service:
     base-url: http://localhost:8080/api
 credit-service:
     base-url-credit: http://localhost:8080/api
+customer-service:
+    base-url: http://localhost:8080/api/customers
 springdoc:
     api-docs:
         enabled: true
