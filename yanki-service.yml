@@ -70,13 +70,3 @@ resilience4j:
                 permittedNumberOfCallsInHalfOpenState: 3
                 slowCallDurationThreshold: 5s
                 slowCallRateThreshold: 50
-            instances:
-                customerService:
-                    baseConfig: default
-                    timeoutDuration: 2s
-                creditService:
-                    baseConfig: default
-                    timeoutDuration: 2s
-                customerEligibilityService:
-                    baseConfig: default
-                    timeoutDuration: 2s
