@@ -41,7 +41,7 @@ spring:
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
             properties:
-                spring.json.type.mapping: yankicardrequest:com.bank.yankiservice.dto.cardlink.CardLinkRequestedEvent,yankitransaction:com.bank.yankiservice.model.YankiTransaction
+                spring.json.type.mapping: yankicardrequest:com.bank.yankiservice.dto.cardlink.CardLinkRequestedEvent,yankitransactionevent:com.bank.yankiservice.dto.transaction.YankiTransactionEvent
                 spring.json.trusted.packages: "*"
 springdoc:
     api-docs:
