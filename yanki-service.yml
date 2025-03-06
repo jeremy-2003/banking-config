@@ -30,7 +30,7 @@ spring:
             value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
             auto-offset-reset: latest
             properties:
-                spring.json.type.mapping: yankicardconfirmed:com.bank.yankiservice.dto.cardlink.CardLinkConfirmedEvent,yankicardrejected:com.bank.yankiservice.dto.cardlink.CardLinkRejectedEvent
+                spring.json.type.mapping: yankicardconfirmed:com.bank.yankiservice.dto.cardlink.CardLinkConfirmedEvent,yankicardrejected:com.bank.yankiservice.dto.cardlink.CardLinkRejectedEvent,yankitransactionprocessed:com.bank.yankiservice.dto.transaction.YankiTransactionProcessedEvent,balanceupdate:com.bank.yankiservice.dto.balance.BalanceUpdatedEvent
                 spring.json.trusted.packages: "*"
                 heartbeat.interval.ms: 3000
                 session.timeout.ms: 10000
@@ -41,7 +41,7 @@ spring:
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
             properties:
-                spring.json.type.mapping: yankicardrequest:com.bank.yankiservice.dto.cardlink.CardLinkRequestedEvent
+                spring.json.type.mapping: yankicardrequest:com.bank.yankiservice.dto.cardlink.CardLinkRequestedEvent,yankitransaction:com.bank.yankiservice.model.YankiTransaction
                 spring.json.trusted.packages: "*"
 springdoc:
     api-docs:
