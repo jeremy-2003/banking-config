@@ -70,3 +70,6 @@ resilience4j:
                 permittedNumberOfCallsInHalfOpenState: 3
                 slowCallDurationThreshold: 5s
                 slowCallRateThreshold: 50
+jwt:
+ secret: mySecretKey123456
+ expiration: 86400000
