@@ -5,7 +5,7 @@ eureka:
         service-url:
             defaultZone: http://eureka-server-cxgjf0gxbhbsfccz.canadacentral-01.azurewebsites.net/eureka
     instance:
-        hostname: transactionservice-g3gmebgcbucugxhr.canadacentral-01.azurewebsites.net
+        hostname: yankiservice-cjarfpdvapdjh2c8.canadacentral-01.azurewebsites.net
         nonSecurePort: 80
         securePort: 443
         securePortEnabled: true
