@@ -70,3 +70,6 @@ resilience4j:
                 permittedNumberOfCallsInHalfOpenState: 3
                 slowCallDurationThreshold: 5s
                 slowCallRateThreshold: 50
+jwt:
+ secret: E{y(/so(hsqz`ngQW"C1`Lo#+kVq>q#P
+ expiration: 86400000
