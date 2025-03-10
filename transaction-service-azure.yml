@@ -41,7 +41,7 @@ spring:
             value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
             auto-offset-reset: latest
             properties:
-                spring.json.type.mapping: account:com.bank.transactionservice.model.account.Account,credit:com.bank.transactionservice.model.credit.Credit,creditcard:com.bank.transactionservice.model.creditcard.CreditCard,yankitransactionevent:com.bank.transactionservice.dto.YankiTransactionEvent
+                spring.json.type.mapping: account:com.bank.transactionservice.model.account.Account,credit:com.bank.transactionservice.model.credit.Credit,creditcard:com.bank.transactionservice.model.creditcard.CreditCard,yankitransactionevent:com.bank.transactionservice.dto.YankiTransactionEvent,bootcoinbankpurchasedrequest:com.bank.transactionservice.dto.bootcoinbank.BootCoinBankPurchaseRequested,transactionevent:com.bank.transactionservice.dto.bootcoinpurchase.TransactionEvent
                 spring.json.trusted.packages: "*"
                 heartbeat.interval.ms: 3000
                 session.timeout.ms: 10000
@@ -52,7 +52,7 @@ spring:
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
             properties:
-                spring.json.type.mapping: yankitransactionprocessed:com.bank.transactionservice.dto.YankiTransactionProcessedEvent,balanceupdate:com.bank.transactionservice.dto.BalanceUpdatedEvent
+                spring.json.type.mapping: yankitransactionprocessed:com.bank.transactionservice.dto.YankiTransactionProcessedEvent,balanceupdate:com.bank.transactionservice.dto.BalanceUpdatedEvent,bootcoinbankpurchasecompleted:com.bank.transactionservice.dto.bootcoinbank.BootCoinBankPurchaseCompleted,transactionresponse:com.bank.transactionservice.dto.bootcoinpurchase.TransactionResponse
                 spring.json.trusted.packages: "*"
 account-service:
     base-url: https://apigateway-awfrh3a7gweucpbb.canadacentral-01.azurewebsites.net/api
