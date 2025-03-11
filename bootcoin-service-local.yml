@@ -25,7 +25,7 @@ spring:
                 mechanism: PLAIN
             sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="\$\ConnectionString" password="Endpoint=sb://bankkafka.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=tVQTP6WHDJNy08SKfHu1t9qrz486rolhD+AEhJM5Ohk=";
         consumer:
-            group-id: bootcoin-service-group
+            group-id: bootcoin-service
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
             value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
             auto-offset-reset: latest
